@@ -12,10 +12,10 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 9000, host: 9000, auto_correct: true
   
   # create private network, so all ports of VM are accessible via its own IP address
-  config.vm.network "private_network", ip: "192.168.178.90"
-  # config.vm.network "private_network", type: "dhcp"
+  # config.vm.network "private_network", ip: "192.168.178.90"
+  config.vm.network "private_network", type: "dhcp"
   
-  # Bridge: create a network bridge withe the host's network
+  # Bridge: create a network bridge with the host's network
   # config.vm.network "public_network"
   
   # share the "shared" directory with the VM
@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
   
   # VM credentials (for existing user, will not create new users)
   config.ssh.insert_key = true
-  # config.ssh.username = "ubuntu/"
+  # config.ssh.username = "ubuntu"
   # config.ssh.password = "password"
   
   # enable/disable gui
