@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder "shared", "/shared"
   
   # one-time provisioning
-  config.vm.provision :shell, path: "bootstrap.sh"
+  config.vm.provision :shell, path: "vm-bootstrap.sh"
   
   # configure DNS hostname
   config.vm.hostname = "dockerhost"
